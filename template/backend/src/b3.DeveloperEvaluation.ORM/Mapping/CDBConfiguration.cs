@@ -13,5 +13,13 @@ public class CDBConfiguration : IEntityTypeConfiguration<CDB>
         builder.HasKey(u => u.Id);
         builder.Property(u => u.Id).HasColumnType("uuid").HasDefaultValueSql("gen_random_uuid()");
 
+
+        builder.Property(u => u.VF).IsRequired();
+
+        builder.Property(u => u.VI).IsRequired();
+
+        builder.Property(u => u.CDI).IsRequired();
+
+        builder.Property(u => u.TB).IsRequired();
     }
 }

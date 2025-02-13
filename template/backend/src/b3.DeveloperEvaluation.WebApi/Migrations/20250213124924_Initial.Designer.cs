@@ -12,8 +12,8 @@ using b3.DeveloperEvaluation.ORM;
 namespace b3.DeveloperEvaluation.WebApi.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20250213003816_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250213124924_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
