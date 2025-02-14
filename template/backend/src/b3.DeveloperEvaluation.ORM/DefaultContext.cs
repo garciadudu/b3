@@ -10,6 +10,7 @@ namespace b3.DeveloperEvaluation.ORM;
 public class DefaultContext : DbContext
 {
     public DbSet<CDB> Cdbs { get; set; }
+    public DbSet<Titulo> Titulos { get; set; }
 
 
     public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
@@ -20,10 +21,12 @@ public class DefaultContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         modelBuilder.ApplyConfiguration(new CDBConfiguration());
+        modelBuilder.ApplyConfiguration(new  TituloConfiguration());
 
         base.OnModelCreating(modelBuilder);
     }
 }
+
 public class YourDbContextFactory : IDesignTimeDbContextFactory<DefaultContext>
 {
     public DefaultContext CreateDbContext(string[] args)

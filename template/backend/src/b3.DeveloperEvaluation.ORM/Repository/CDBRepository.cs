@@ -1,7 +1,6 @@
 ﻿using b3.DeveloperEvaluation.Domain.Entity;
 using b3.DeveloperEvaluation.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
 
 namespace b3.DeveloperEvaluation.ORM.Repository;
 
@@ -26,7 +25,6 @@ public class CDBRepository: ICDBRepository
     {
         return await _context.Cdbs.FirstOrDefaultAsync(o => o.Id == id, cancellationToken); 
     }
-
 
     public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {

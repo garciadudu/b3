@@ -7,7 +7,22 @@ public class CreateCDBProfile: Profile
 {
     public CreateCDBProfile()
     {
-        CreateMap<CreateCDBCommand, CDB>();
-        CreateMap<CDB, CreateCDBResult>();
+        CreateMap<CreateCDBCommand, CDB>()
+            .ConstructUsing(origin => new CDB()
+            {
+                VI = origin.VI,
+                VF = origin.VF,
+                CDI = origin.CDI,
+                TB = origin.TB,
+            });
+
+        CreateMap<CDB, CreateCDBResult>()
+            .ConstructUsing(origin => new CreateCDBResult()
+            {
+                VI = origin.VI,
+                VF = origin.VF,
+                CDI = origin.CDI,
+                TB = origin.TB,
+            });
     }
 }

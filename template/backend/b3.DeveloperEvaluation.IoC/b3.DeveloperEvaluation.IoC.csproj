@@ -15,8 +15,4 @@
     <ProjectReference Include="..\src\b3.DeveloperEvaluation.ORM\b3.DeveloperEvaluation.ORM.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ModuleInitializers\" />
-  </ItemGroup>
-
 </Project>

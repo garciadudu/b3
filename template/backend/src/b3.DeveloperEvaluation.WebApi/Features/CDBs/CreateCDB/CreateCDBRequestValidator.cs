@@ -3,27 +3,18 @@ using FluentValidation;
 using FluentValidation.Validators;
 using Microsoft.AspNetCore.Identity;
 
-namespace b3.DeveloperEvaluation.WebApi.Features.CDBs.CreateCDB
+namespace b3.DeveloperEvaluation.WebApi.Features.CDBs.CreateCDB;
+
+public class CreateCDBRequestValidator: AbstractValidator<CreateCDBRequest>
 {
-    public class CreateCDBRequestValidator: AbstractValidator<CreateCDBRequest>
+    public CreateCDBRequestValidator()
     {
-        public CreateCDBRequestValidator()
-        {
-            RuleFor(cdb => cdb.VF)
-                .GreaterThan(0)
-                .WithMessage("Informe o VF positivo");
+        RuleFor(cdb => cdb.VF)
+            .GreaterThan(0)
+            .WithMessage("Informe o VF positivo");
 
-            RuleFor(cdb => cdb.VI)
-                .GreaterThan(0)
-                .WithMessage("Informe o VI positivo");
-
-            RuleFor(cdb => cdb.CDI)
-                .GreaterThan(0)
-                .WithMessage("Informe o CDI positivo");
-
-            RuleFor(cdb => cdb.TB)
-                .GreaterThan(0)
-                .WithMessage("Informe o TB positivo");
-        }
+        RuleFor(cdb => cdb.VI)
+            .GreaterThan(0)
+            .WithMessage("Informe o VI positivo");
     }
 }
